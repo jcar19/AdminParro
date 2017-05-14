@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:security="http://www.springframework.org/schema/security"
+       
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
+">
+    
+    <security:http auto-config="true" use-expressions="true" >
+        <security:intercept-url pattern="/about.htm" access="permitAll" />
+        <security:intercept-url pattern="/logeo.htm" access="permitAll" />
+        <security:intercept-url pattern="/zonaadmin.htm" access="hasRole('ROLE_ADMIN')" />
+        <!--<security:intercept-url pattern="/**" access="isAuthenticated()" />-->
+        <security:form-login login-page="/logeo.htm" username-parameter="usuario" password-parameter="passw"
+            authentication-failure-url="/logeo.htm?error=true" />
+        <security:logout logout-url="/j_spring_security_logout" logout-success-url="/" invalidate-session="true" delete-cookies="JSESSIONID" />
+        <!--<security:csrf disabled="true" />-->
+    </security:http>
+    
+    <security:authentication-manager>
+        <security:authentication-provider ref="customAuthenticationProvider">
+<!--            <security:user-service>
+                <security:user name="juan" password="123" authorities="ROLE_ADMIN" />
+            </security:user-service>-->
+        </security:authentication-provider>
+    </security:authentication-manager>
+    
+    <bean id="customAuthenticationProvider" class="com.jccr.adminparro.config.CustomAuthenticationProvider">
+    </bean>
+    <bean id="customUserDetailsService" class="com.jccr.adminparro.config.CustomUserDetailsService">
+    </bean>
+    
+</beans>
