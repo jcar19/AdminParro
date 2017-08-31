@@ -19,7 +19,7 @@
                 <h1>Acerca de...</h1>
                 <p><strong>Desarrollo por: Juan Carlos Corona Rabadán</strong></p>
                 <p><strong>Software para la administración de usuarios en el sistema de parroquia.</strong></p>
-                <a href="<c:url value="/" />">Seccion Principal</a>
+                <a href="<c:url value="/logeo.htm" />">Seccion Principal</a>
                 <h4>Tecnologías utilizadas:</h4>
                 <div class="row">                    
                     <ul class="list-unstyled">				
