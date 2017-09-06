@@ -231,12 +231,12 @@
                                     <version>7.0</version>
                                     <type>jar</type>
                                 </artifactItem>
-								<artifactItem>
-									<groupId>org.eclipse.jetty</groupId>
-									<artifactId>jetty-runner</artifactId>
-									<version>9.2.7.v20150116</version>
-									<destFileName>jetty-runner.jar</destFileName>
-								</artifactItem>
+                                <artifactItem>
+                                    <groupId>org.eclipse.jetty</groupId>
+                                    <artifactId>jetty-runner</artifactId>
+                                    <version>9.2.7.v20150116</version>
+                                    <destFileName>jetty-runner.jar</destFileName>
+                                </artifactItem>
                             </artifactItems>
                         </configuration>
                     </execution>
