@@ -27,7 +27,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider{
         String principal = authentication.getName();
         String credenciales = (String) authentication.getCredentials();
         
-        User user = (User) customUserDetailsService.loadUserByUsername("principla");
+        User user = (User) customUserDetailsService.loadUserByUsername(principal);
         
         if (user != null) {
             if(credenciales.equals(user.getPassword())){
