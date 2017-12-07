@@ -26,4 +26,9 @@ public class IndexController {
     public String aAbout(){
         return "about";
     }
+    
+    @RequestMapping(value = "/", method = RequestMethod.GET)    
+    public String aindex(){
+        return "logeo";
+    }
 }
