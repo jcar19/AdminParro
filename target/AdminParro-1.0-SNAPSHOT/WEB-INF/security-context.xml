@@ -14,7 +14,7 @@
         <!--<security:intercept-url pattern="/**" access="isAuthenticated()" />-->
         <security:form-login login-page="/logeo.htm" username-parameter="usuario" password-parameter="passw"
             authentication-failure-url="/logeo.htm?error=true" />
-        <security:logout logout-url="/j_spring_security_logout" logout-success-url="/" invalidate-session="true" delete-cookies="JSESSIONID" />
+        <security:logout logout-url="/j_spring_security_logout" logout-success-url="/zonaadmin.htm" invalidate-session="true" delete-cookies="JSESSIONID" />
         <!--<security:csrf disabled="true" />-->
     </security:http>
     
