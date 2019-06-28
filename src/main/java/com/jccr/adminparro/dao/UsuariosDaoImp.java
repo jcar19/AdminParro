@@ -49,8 +49,12 @@ public class UsuariosDaoImp implements UsuariosDao{
 //        Criteria criterio = getSession().createCriteria(Usuarios.class, "user");
 //        criterio.setProjection(Property.forName("user.idUsuarios").max());
 //        return (int) criterio.uniqueResult();
+                
+        if(dameUsuarioPorId(1) == null)
+            return 0;
+        else
+            return (int) getSession().createQuery("select max(user.idUsuarios) from Usuarios user").uniqueResult();
         
-        return (int) getSession().createQuery("select max(user.idUsuarios) from Usuarios user").uniqueResult();
     }
 
     @Override
